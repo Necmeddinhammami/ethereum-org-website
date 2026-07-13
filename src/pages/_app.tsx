@@ -5,6 +5,7 @@ import { appWithTranslation } from "next-i18next"
 // to reduce bundle size. Should be reverted to "@chakra-ui/react" in case on theme issues
 import { ChakraProvider } from "@chakra-ui/provider"
 import { init } from "@socialgouv/matomo-next"
+import { Analytics } from "@vercel/analytics/next"
 
 import customTheme from "@/@chakra-ui/theme"
 
@@ -53,6 +54,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           {getLayout(<Component {...pageProps} />)}
         </RootLayout>
       </ChakraProvider>
+      <Analytics />
     </>
   )
 }
